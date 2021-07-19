@@ -1,0 +1,17 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+<script>
+    socket = io();
+    socket.on('sender' , function(data) {
+    // User ID e.g. if 2 then method will be recivedPTEMsg2
+       console.log(data,'helloooo');
+    })
+
+    function send() {
+      socket.emit('receiver', {lat:35456464,long:4646465,"sfdfdf"});
+    }
+</script>
+<input type="text" id="sendmesg" />
+<input type="button" onclick="send()" />
+
+<div id = "message-container"></div> 
